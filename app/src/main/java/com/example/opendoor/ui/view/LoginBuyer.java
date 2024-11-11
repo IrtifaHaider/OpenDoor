@@ -13,7 +13,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class Loginbuyer extends AppCompatActivity {
+public class LoginBuyer extends AppCompatActivity {
 
     private TextInputEditText usernameEditText, passwordEditText;
     private Button loginButton, forgotPasswordButton, signUpButton, cancelButton;
@@ -23,7 +23,7 @@ public class Loginbuyer extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_loginbuyer);
+        setContentView(R.layout.activity_login_buyer);
 
         // Initialize Firebase Authentication
         auth = FirebaseAuth.getInstance();
@@ -52,14 +52,14 @@ public class Loginbuyer extends AppCompatActivity {
                     .addOnCompleteListener(this, task -> {
                         if (task.isSuccessful()) {
                             FirebaseUser user = auth.getCurrentUser();
-                            Toast.makeText(Loginbuyer.this, "Login successful", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginBuyer.this, "Login successful", Toast.LENGTH_SHORT).show();
 
                             // Navigate to the main activity or home screen
-                            Intent intent = new Intent(Loginbuyer.this, MainActivity.class);
+                            Intent intent = new Intent(LoginBuyer.this, MainActivity.class);
                             startActivity(intent);
                             finish();
                         } else {
-                            Toast.makeText(Loginbuyer.this, "Authentication failed", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginBuyer.this, "Authentication failed", Toast.LENGTH_SHORT).show();
                         }
                     });
         }
@@ -88,16 +88,16 @@ public class Loginbuyer extends AppCompatActivity {
         auth.sendPasswordResetEmail(email)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        Toast.makeText(Loginbuyer.this, "Password reset email sent", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginBuyer.this, "Password reset email sent", Toast.LENGTH_SHORT).show();
                     } else {
-                        Toast.makeText(Loginbuyer.this, "Failed to send reset email", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginBuyer.this, "Failed to send reset email", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
 
     private void navigateToSignUp() {
         // Navigate to SignUpActivity
-        Intent intent = new Intent(Loginbuyer.this, SignUpbuyer.class);
+        Intent intent = new Intent(LoginBuyer.this, SignUpBuyer.class);
         startActivity(intent);
     }
 }

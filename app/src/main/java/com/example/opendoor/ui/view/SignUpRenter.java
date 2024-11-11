@@ -6,16 +6,14 @@ import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.opendoor.R;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class SignUpbuyer extends AppCompatActivity {
+public class SignUpRenter extends AppCompatActivity {
 
     private TextInputEditText usernameEditText, emailEditText, passwordEditText, confirmPasswordEditText;
     private Button signUpButton, cancelButton, loginButton;
@@ -24,7 +22,7 @@ public class SignUpbuyer extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_upbuyer);
+        setContentView(R.layout.activity_sign_up_renter);
 
         // Initialize Firebase Authentication
         auth = FirebaseAuth.getInstance();
@@ -57,10 +55,10 @@ public class SignUpbuyer extends AppCompatActivity {
                     .addOnCompleteListener(this, task -> {
                         if (task.isSuccessful()) {
                             FirebaseUser user = auth.getCurrentUser();
-                            Toast.makeText(SignUpbuyer.this, "Account created successfully", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignUpRenter.this, "Account created successfully", Toast.LENGTH_SHORT).show();
                             navigateToMainActivity();
                         } else {
-                            Toast.makeText(SignUpbuyer.this, "Account creation failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignUpRenter.this, "Account creation failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     });
         }
@@ -91,12 +89,12 @@ public class SignUpbuyer extends AppCompatActivity {
     }
 
     private void navigateToLogin() {
-        Intent intent = new Intent(SignUpbuyer.this, Rent.class);  // Replace LoginActivity.class with your login activity
+        Intent intent = new Intent(SignUpRenter.this, Rent.class);  // Replace LoginActivity.class with your login activity
         startActivity(intent);
     }
 
     private void navigateToMainActivity() {
-        Intent intent = new Intent(SignUpbuyer.this, MainActivity.class);  // Replace MainActivity.class with your main activity
+        Intent intent = new Intent(SignUpRenter.this, MainActivity.class);  // Replace MainActivity.class with your main activity
         startActivity(intent);
         finish();
     }

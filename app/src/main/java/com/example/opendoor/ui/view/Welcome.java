@@ -6,8 +6,6 @@ import android.graphics.LinearGradient;
 import android.graphics.Shader;
 import android.os.Bundle;
 import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,44 +18,21 @@ public class Welcome extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_welcome);
 
-        // Find each button by ID
-        Button buttonRentOut = findViewById(R.id.buttonRentOut);
-        Button buttonForRent = findViewById(R.id.buttonForRent);
-        Button buttonForSale = findViewById(R.id.buttonForSale);
-        Button buttonAuctions = findViewById(R.id.buttonAuctions);
+        // Find each button by ID and set click listeners
+        Button buttonRentOut = findViewById(R.id.buttonrenter);
+        Button buttonForRent = findViewById(R.id.buttontenant);
+        Button buttonBuyer = findViewById(R.id.buttonbuyer);
+        Button buttonSeller = findViewById(R.id.buttonseller);
 
-        // Find TextView by ID for animations
+        // Find TextView by ID for gradient animation
         TextView multicolorTextView = findViewById(R.id.multicolorTextView);
-
-        // Apply animations to the TextView
-        //applyFadeAnimation(multicolorTextView);       // Fade in/out animation
-        //applySlideAnimation(multicolorTextView);      // Slide animation
-        //applyZoomAnimation(multicolorTextView);       // Zoom animation
-        applyLeftToRightGradientAnimation(multicolorTextView); // Left-to-right gradient animation
+        applyLeftToRightGradientAnimation(multicolorTextView);
 
         // Set up click listeners
-        buttonRentOut.setOnClickListener(v -> startActivity(new Intent(Welcome.this, LoginRntr.class)));
-        buttonForRent.setOnClickListener(v -> startActivity(new Intent(Welcome.this, LoginRnt.class)));
-        buttonForSale.setOnClickListener(v -> startActivity(new Intent(Welcome.this, Loginbuyer.class)));
-        buttonAuctions.setOnClickListener(v -> startActivity(new Intent(Welcome.this, Loginselr.class)));
-    }
-
-    // Method for fade animation
-    private void applyFadeAnimation(TextView textView) {
-        Animation fadeInOutAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in_out);
-        textView.startAnimation(fadeInOutAnimation);
-    }
-
-    // Method for slide animation
-    private void applySlideAnimation(TextView textView) {
-        Animation slideAnimation = AnimationUtils.loadAnimation(this, R.anim.slide_left_right);
-        textView.startAnimation(slideAnimation);
-    }
-
-    // Method for zoom animation
-    private void applyZoomAnimation(TextView textView) {
-        Animation zoomAnimation = AnimationUtils.loadAnimation(this, R.anim.zoom_in_out);
-        textView.startAnimation(zoomAnimation);
+        buttonRentOut.setOnClickListener(v -> startActivity(new Intent(Welcome.this, LoginRenter.class)));
+        buttonForRent.setOnClickListener(v -> startActivity(new Intent(Welcome.this, LoginTenant.class)));
+        buttonSeller.setOnClickListener(v -> startActivity(new Intent(Welcome.this, LoginSeller.class)));
+        buttonBuyer.setOnClickListener(v -> startActivity(new Intent(Welcome.this, LoginBuyer.class)));
     }
 
     // Method for left-to-right color gradient animation

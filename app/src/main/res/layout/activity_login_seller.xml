@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="#E6F0FA"
     android:padding="20dp"
-    tools:context=".ui.view.LoginRnt">
+    tools:context=".ui.view.LoginSeller">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,7 +33,7 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:textStyle="bold"
-        android:text="Step into comfort!\n Explore Ideal Rentals.\n Find Your Cozy Space!"
+        android:text="Sell Your House, Stress-Free!\n Connect with Interested Buyers!"
         android:textSize="20sp"
         android:textColor="#609fd1"
         android:transitionName="logo_text" />

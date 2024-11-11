@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="#E6F0FA"
     android:padding="20dp"
-    tools:context=".ui.view.SignUpselr">
+    tools:context=".ui.view.SignUpTenant">
 
     <!-- Header Image or Icon -->
     <pl.droidsonroids.gif.GifImageView

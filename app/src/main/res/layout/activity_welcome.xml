@@ -37,7 +37,7 @@
             android:layout_marginBottom="8dp">
 
             <Button
-                android:id="@+id/buttonRentOut"
+                android:id="@+id/buttonrenter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Rent Out Your Space!"
@@ -66,7 +66,7 @@
                 android:layout_marginBottom="8dp">
 
                 <Button
-                    android:id="@+id/buttonForRent"
+                    android:id="@+id/buttontenant"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Rent in Comfort!"
@@ -90,7 +90,7 @@
                 android:layout_marginBottom="8dp">
 
                 <Button
-                    android:id="@+id/buttonAuctions"
+                    android:id="@+id/buttonseller"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Sell Stress-Free!"
@@ -113,7 +113,7 @@
                 android:layout_marginBottom="8dp">
 
                 <Button
-                    android:id="@+id/buttonForSale"
+                    android:id="@+id/buttonbuyer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Own Your Dream!"

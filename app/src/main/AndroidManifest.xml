@@ -13,31 +13,31 @@
         android:theme="@style/Theme.OpenDoor"
         tools:targetApi="31">
         <activity
-            android:name=".ui.view.SignUpselr"
+            android:name=".ui.view.SignUpSeller"
             android:exported="false" />
         <activity
-            android:name=".ui.view.SignUpbuyer"
+            android:name=".ui.view.SignUpBuyer"
             android:exported="false" />
         <activity
-            android:name=".ui.view.SignUpRntr"
+            android:name=".ui.view.SignUpRenter"
             android:exported="false" />
         <activity
-            android:name=".ui.view.SignUpRnt"
+            android:name=".ui.view.SignUpTenant"
             android:exported="false" />
         <activity
             android:name=".ui.view.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.view.Loginbuyer"
+            android:name=".ui.view.LoginBuyer"
             android:exported="false" />
         <activity
-            android:name=".ui.view.Loginselr"
+            android:name=".ui.view.LoginSeller"
             android:exported="false" />
         <activity
-            android:name=".ui.view.LoginRntr"
+            android:name=".ui.view.LoginRenter"
             android:exported="false" />
         <activity
-            android:name=".ui.view.LoginRnt"
+            android:name=".ui.view.LoginTenant"
             android:exported="false" />
         <activity
             android:name=".ui.view.Login"
