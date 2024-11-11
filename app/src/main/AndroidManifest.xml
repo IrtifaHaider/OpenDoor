@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -25,9 +28,6 @@
             android:name=".ui.view.SignUpTenant"
             android:exported="false" />
         <activity
-            android:name=".ui.view.SignUpActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.view.LoginBuyer"
             android:exported="false" />
         <activity
@@ -38,9 +38,6 @@
             android:exported="false" />
         <activity
             android:name=".ui.view.LoginTenant"
-            android:exported="false" />
-        <activity
-            android:name=".ui.view.Login"
             android:exported="false" />
         <activity
             android:name=".ui.view.Welcome"

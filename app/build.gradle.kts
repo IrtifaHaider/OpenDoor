@@ -53,6 +53,7 @@ dependencies {
     implementation(libs.legacy.support.v4)
     implementation(libs.lifecycle.livedata.ktx)
     implementation(libs.lifecycle.viewmodel.ktx)
+    implementation(libs.firebase.database)
     testImplementation(libs.junit)
     implementation("com.google.android.material:material:1.9.0")
     androidTestImplementation(libs.ext.junit)

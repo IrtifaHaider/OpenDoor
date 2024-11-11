@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "583198129505",
-    "project_id": "opendoor-70f1d",
-    "storage_bucket": "opendoor-70f1d.firebasestorage.app"
+    "project_number": "892498780653",
+    "project_id": "opendoor-894e8",
+    "storage_bucket": "opendoor-894e8.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:583198129505:android:cdf478a3322f96af1b1920",
+        "mobilesdk_app_id": "1:892498780653:android:a8e726a4cb3646666807e4",
         "android_client_info": {
           "package_name": "com.example.opendoor"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBMJU2vAiY8ZNwcZh_nA5A1J-qXQk83Nm4"
+          "current_key": "AIzaSyA__ty8szJaMG7fyH9lsd2HAFztc-5pKyw"
         }
       ],
       "services": {

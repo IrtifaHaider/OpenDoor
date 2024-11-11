@@ -7,8 +7,10 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.opendoor.R;
+import com.example.opendoor.ui.viewmodel.SignUpViewModel;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -17,15 +19,15 @@ public class SignUpBuyer extends AppCompatActivity {
 
     private TextInputEditText usernameEditText, emailEditText, passwordEditText, confirmPasswordEditText;
     private Button signUpButton, cancelButton, loginButton;
-    private FirebaseAuth auth;
+    private SignUpViewModel signUpViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up_buyer);
+        setContentView(R.layout.activity_sign_up_renter);
 
-        // Initialize Firebase Authentication
-        auth = FirebaseAuth.getInstance();
+        // Initialize ViewModel
+        signUpViewModel = new ViewModelProvider(this).get(SignUpViewModel.class);
 
         // Bind UI components
         usernameEditText = findViewById(R.id.username);
@@ -38,8 +40,22 @@ public class SignUpBuyer extends AppCompatActivity {
 
         // Set up button click listeners
         signUpButton.setOnClickListener(v -> createAccount());
-        cancelButton.setOnClickListener(v -> finish());  // Closes the activity
+        cancelButton.setOnClickListener(v -> finish());
         loginButton.setOnClickListener(v -> navigateToLogin());
+
+        // Observe ViewModel LiveData for success or failure
+        signUpViewModel.getUserLiveData().observe(this, firebaseUser -> {
+            if (firebaseUser != null) {
+                Toast.makeText(SignUpBuyer.this, "Account created successfully", Toast.LENGTH_SHORT).show();
+                navigateToMainActivity();
+            }
+        });
+
+        signUpViewModel.getSignUpFailedLiveData().observe(this, signUpFailed -> {
+            if (signUpFailed) {
+                Toast.makeText(SignUpBuyer.this, "Sign up failed. Please try again.", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void createAccount() {
@@ -48,19 +64,8 @@ public class SignUpBuyer extends AppCompatActivity {
         String password = passwordEditText.getText().toString().trim();
         String confirmPassword = confirmPasswordEditText.getText().toString().trim();
 
-        // Validate input
         if (validateInput(username, email, password, confirmPassword)) {
-            // Create a new user with Firebase Authentication
-            auth.createUserWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(this, task -> {
-                        if (task.isSuccessful()) {
-                            FirebaseUser user = auth.getCurrentUser();
-                            Toast.makeText(SignUpBuyer.this, "Account created successfully", Toast.LENGTH_SHORT).show();
-                            navigateToMainActivity();
-                        } else {
-                            Toast.makeText(SignUpBuyer.this, "Account creation failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    });
+            signUpViewModel.signUpUser(username, email, password);
         }
     }
 
@@ -89,12 +94,12 @@ public class SignUpBuyer extends AppCompatActivity {
     }
 
     private void navigateToLogin() {
-        Intent intent = new Intent(SignUpBuyer.this, Rent.class);  // Replace LoginActivity.class with your login activity
+        Intent intent = new Intent(SignUpBuyer.this, LoginBuyer.class);
         startActivity(intent);
     }
 
     private void navigateToMainActivity() {
-        Intent intent = new Intent(SignUpBuyer.this, MainActivity.class);  // Replace MainActivity.class with your main activity
+        Intent intent = new Intent(SignUpBuyer.this, MainActivity.class);
         startActivity(intent);
         finish();
     }
