@@ -108,7 +108,7 @@ public class LoginRntr extends AppCompatActivity {
 
     // Navigates to the Sign-Up activity
     private void navigateToSignUp() {
-        Intent intent = new Intent(LoginRntr.this, SignUpActivity.class);
+        Intent intent = new Intent(LoginRntr.this, SignUpRntr.class);
         startActivity(intent);
     }
 

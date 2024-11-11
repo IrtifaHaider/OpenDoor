@@ -105,7 +105,7 @@ public class LoginRnt extends AppCompatActivity {
 
     private void navigateToSignUp() {
         // Navigate to SignUpActivity
-        Intent intent = new Intent(LoginRnt.this, SignUpActivity.class);
+        Intent intent = new Intent(LoginRnt.this, SignUpRnt.class);
         startActivity(intent);
     }
 }

@@ -97,7 +97,7 @@ public class Loginselr extends AppCompatActivity {
 
     private void navigateToSignUp() {
         // Navigate to SignUpActivity
-        Intent intent = new Intent(Loginselr.this, SignUpActivity.class);
+        Intent intent = new Intent(Loginselr.this, SignUpselr.class);
         startActivity(intent);
     }
 }

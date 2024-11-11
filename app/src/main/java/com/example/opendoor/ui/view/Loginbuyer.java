@@ -97,7 +97,7 @@ public class Loginbuyer extends AppCompatActivity {
 
     private void navigateToSignUp() {
         // Navigate to SignUpActivity
-        Intent intent = new Intent(Loginbuyer.this, SignUpActivity.class);
+        Intent intent = new Intent(Loginbuyer.this, SignUpbuyer.class);
         startActivity(intent);
     }
 }
