@@ -38,8 +38,8 @@ public class Welcome extends AppCompatActivity {
         // Set up click listeners
         buttonRentOut.setOnClickListener(v -> startActivity(new Intent(Welcome.this, LoginRntr.class)));
         buttonForRent.setOnClickListener(v -> startActivity(new Intent(Welcome.this, LoginRnt.class)));
-        buttonForSale.setOnClickListener(v -> startActivity(new Intent(Welcome.this, Loginselr.class)));
-        buttonAuctions.setOnClickListener(v -> startActivity(new Intent(Welcome.this, Loginbuyer.class)));
+        buttonForSale.setOnClickListener(v -> startActivity(new Intent(Welcome.this, Loginbuyer.class)));
+        buttonAuctions.setOnClickListener(v -> startActivity(new Intent(Welcome.this, Loginselr.class)));
     }
 
     // Method for fade animation
