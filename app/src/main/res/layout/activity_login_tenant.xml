@@ -64,7 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#D7EAF9"
-            android:hint="Username"
+            android:hint="Enter Your Email"
             app:hintTextColor="#F5A8B8"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
