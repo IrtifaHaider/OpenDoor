@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#E6F0FA"
+    android:padding="20dp"
+    tools:context=".ui.view.LoginRntr">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="24dp">
+
+        <!-- Add GifImageView for the GIF -->
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/icons_houseg"
+            android:contentDescription="Animated House GIF" />
+
+    </LinearLayout>
+
+    <!-- Welcome Message -->
+    <TextView
+        android:id="@+id/logo_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="Unlock Your Property's Potential!\nRent Out Your Property Today!"
+        android:textSize="20sp"
+        android:textColor="#609fd1"
+        android:transitionName="logo_text" />
+
+    <!-- Slogan -->
+
+    <!-- Input Fields and Buttons Section -->
+    <TextView
+        android:id="@+id/slogan_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:text="Sign in to continue"
+        android:textColor="#F5A8B8"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <!-- Username Field -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/usernameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#D7EAF9"
+            android:hint="Username"
+            app:hintTextColor="#F5A8B8"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:textColor="#F5A8B8" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Password Field -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            app:hintTextColor="#F5A8B8"
+            app:passwordToggleEnabled="true"
+            android:background="#D7EAF9"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_marginTop="12dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:textColor="#F5A8B8" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Cancel and Forgot Password Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end"
+            android:layout_marginTop="8dp">
+
+            <!-- Cancel Button -->
+            <Button
+                android:id="@+id/cancel_button"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:text="Cancel"
+                android:textStyle="bold"
+                android:textColor="#F5A8B8"
+                android:textSize="14sp" />
+
+            <!-- Spacer to add space between the buttons -->
+            <Space
+                android:layout_width="80dp"
+                android:layout_height="wrap_content" />
+
+            <!-- Forgot Password Button -->
+            <Button
+                android:id="@+id/forgot_password_button"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="Forgot Password?"
+                android:textStyle="bold"
+                android:textColor="#F5A8B8"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Login Button -->
+        <Button
+            android:id="@+id/login_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:backgroundTint="#B8D9F2"
+            android:textStyle="bold"
+            android:textColor="#ED7898"
+            android:layout_marginTop="16dp" />
+
+        <!-- Sign Up Button -->
+        <Button
+            android:id="@+id/sign_up_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Don't have an account? Register here"
+            android:background="@android:color/transparent"
+            android:textColor="#5d9ff5"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:textSize="14sp"
+            android:elevation="0dp" />
+
+    </LinearLayout>
+</LinearLayout>

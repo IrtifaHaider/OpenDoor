@@ -1,0 +1,133 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D1E4F0">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Top Section with Colored Text -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:id="@+id/multicolorTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:text="Explore OpenDoos's Services" /> <!-- Placeholder text -->
+        </LinearLayout>
+
+
+        <!-- Buttons for "For Rent", "For Sale", etc. -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp"
+            android:backgroundTint="#E0FFFF"
+            android:layout_marginBottom="8dp">
+
+            <Button
+                android:id="@+id/buttonRentOut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rent Out Your Space!"
+                android:drawableLeft="@drawable/icon_renter"
+                android:padding="16dp"
+                android:backgroundTint="#E0FFFF"
+                android:textAlignment="textStart"
+                android:gravity="start|center_vertical"
+                android:layout_marginBottom="4dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp">
+
+            <!-- For Rent Button with Description -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:backgroundTint="#FFE4E1"
+                android:layout_marginBottom="8dp">
+
+                <Button
+                    android:id="@+id/buttonForRent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rent in Comfort!"
+                    android:drawableLeft="@drawable/icon_rent"
+                    android:padding="16dp"
+                    android:backgroundTint="#FFE4E1"
+                    android:textAlignment="textStart"
+                    android:gravity="start|center_vertical"
+                    android:layout_marginBottom="4dp"/>
+
+
+            </LinearLayout>
+
+            <!-- Auctions Button with Description -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:backgroundTint="#FFDEAD"
+                android:layout_marginBottom="8dp">
+
+                <Button
+                    android:id="@+id/buttonAuctions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sell Stress-Free!"
+                    android:drawableLeft="@drawable/icon_auctions"
+                    android:padding="16dp"
+                    android:backgroundTint="#E0FFFF"
+                    android:textAlignment="textStart"
+                    android:gravity="start|center_vertical"
+                    android:layout_marginBottom="4dp"/>
+
+            </LinearLayout>
+
+            <!-- For Sale Button with Description -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:backgroundTint="#E0FFFF"
+                android:layout_marginBottom="8dp">
+
+                <Button
+                    android:id="@+id/buttonForSale"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Own Your Dream!"
+                    android:drawableLeft="@drawable/icon_salehouse"
+                    android:padding="16dp"
+                    android:backgroundTint="#FFDEAD"
+                    android:textAlignment="textStart"
+                    android:gravity="start|center_vertical"
+                    android:layout_marginBottom="4dp"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
